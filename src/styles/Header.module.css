@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
