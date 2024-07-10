@@ -5,9 +5,9 @@
     padding: 20px;
   }
 
-  .item-container {
+.item-container {
     margin-bottom: 20px;
-  }
+}
 
 .item-container {
     border: 1px solid #ccc;
@@ -18,9 +18,7 @@
   
   
 .cart-info {
-    padding: 8px;
-    text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     color: #333;
     text-decoration: none;
 }
@@ -43,3 +41,22 @@
     justify-content: space-between;
 }
   
+.empty-cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.empty-cart {
+    margin-bottom: 20px;
+}
+
+.cart-image {
+    width: 100%;
+}

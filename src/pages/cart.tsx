@@ -1,12 +1,18 @@
 import { useCart } from '../context/CartContext';
 import Button from '../components/Button'
 import styles from '../styles/Cart.module.css'
+import { useRouter } from 'next/router';
 
 const CartPage: React.FC = () => {
   const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, completeOrder } = useCart();
 
+  const router = useRouter(); 
+
   if (cartItems.length === 0) {
-    return <div>Your cart is empty.</div>;
+    return <div className={styles['empty-cart-container']}>
+        <div className={styles['empty-cart']}>Your cart is empty.</div>
+        <Button onClick={() => router.push('/')}>Return to Shop</Button>
+        </div>;
   }
 
   return (
@@ -14,9 +20,9 @@ const CartPage: React.FC = () => {
         <div className={styles['cart-container']}>
             {cartItems.map((cartItem, index) => (
                 <div className={styles['item-container']} key={cartItem.item.id}>
-                <img src={cartItem.item.imageUrl} alt={cartItem.item.name} style={{ width: '100px' }} />
-                <h3>{cartItem.item.name}</h3>
-                <p>Quantity: {cartItem.quantity}</p>
+                <img src={cartItem.item.imageUrl} alt={cartItem.item.name} className={styles['cart-image']} />
+                <h3 className={styles['cart-info']}>{cartItem.item.name}</h3>
+                <p className={styles['cart-info']}>Quantity: {cartItem.quantity}</p>
                 <div className={styles['button-group']}>
                     <div className={styles['inline-buttons']}>
                         <Button onClick={() => incrementQuantity(cartItem.item.id, index)}>+</Button>
